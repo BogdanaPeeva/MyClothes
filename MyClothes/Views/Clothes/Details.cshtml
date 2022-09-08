@@ -1,0 +1,25 @@
+﻿@model GarmentViewModel
+
+@if (this.TempData.ContainsKey("Message"))
+{
+<div class="alert alert-success">@this.TempData["Message"]</div>}
+
+<section style="display:flex;">
+    <span style="margin-right:50px">
+        <img src=@Model.ImageUrl style=" height:470px;" />
+    </span>
+
+    <h5 class="align-items-center">
+        Description:<br />
+        @Model.Description
+    </h5>
+
+</section>
+<span style="margin-top:100px;">
+    <a asp-action="All">Back to List</a>
+</span>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
