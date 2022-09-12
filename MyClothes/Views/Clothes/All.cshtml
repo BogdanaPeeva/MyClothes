@@ -4,9 +4,9 @@
 {
 <div class="alert alert-success accept-policy">@this.TempData["Message"]</div>}
 
-<h3 style="text-align:center;margin-right:50px;">
+<h3 style="text-align:center;  margin-top:40px">
     All Pictures
-    <span class="text-center" style="display:flex;flex-wrap:wrap ">
+    <span class="text-center" style="display:flex; flex-wrap:wrap ">
         <a asp-controller="Clothes" asp-action="Add" class="btn btn-link btn-lg">Create new picture</a>
     </span>
 </h3>
@@ -18,7 +18,7 @@
 <div class="row mt-2 mb-4">
     @foreach (var garmentModel in Model.GarmentsModelList)
     {
-<div class="card col-6 col-lg-3 game-card">
+<div class="card col-6 col-lg-3 carousel-dark">
 
     <img src="@garmentModel.ImageUrl"
          class="card-img-top img-fluid figure-img card-image" alt="Image">

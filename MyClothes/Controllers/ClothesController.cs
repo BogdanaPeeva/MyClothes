@@ -15,12 +15,13 @@ namespace MyClothes.Controllers
     using System.IO;
     using System.Linq;
     using MyClothes.ViewModels.GarmentsModels;
-
+    // todo:
     [AutoValidateAntiforgeryToken]
     public class ClothesController : Controller
     {
         private readonly IClothesService garmentService;
-        private readonly ICategoryService categoryService;
+        private 
+            ICategoryService categoryService;
         private readonly ISeasonService seasonService;
         private readonly IColourService colourService;
         private readonly IWebHostEnvironment environment;
@@ -71,7 +72,6 @@ namespace MyClothes.Controllers
 
             return this.View(addGarmentInputModel);
         }
-
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> Add(AddGarmentInputModel addGarmentInputModel)
@@ -159,7 +159,9 @@ namespace MyClothes.Controllers
             {
                 return this.View();
             }
+
             var user =await this.userManager.GetUserAsync(this.User);
+
             var userId = await this.userManager.GetUserIdAsync(user);
 
             await this.garmentService.AddPictureToUserGarments(userId, garmentId);

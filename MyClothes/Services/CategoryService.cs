@@ -2,7 +2,6 @@
 namespace MyClothes.Services
 {
     using AutoMapper;
-
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.EntityFrameworkCore;
     using MyClothes.Data;
@@ -153,7 +152,7 @@ namespace MyClothes.Services
 
             string categoryId = category.CategoryId;
 
-            if (categoryId == null)
+            if (category == null)
             {
                 throw new Exception("No pictures in this category!");
             }
@@ -181,13 +180,16 @@ namespace MyClothes.Services
                         && id != "7")
             {
                 dbContext.Categories.Remove(category);
+
+                await this.dbContext.SaveChangesAsync();
+
+                throw new Exception("Category was succesfully deleted!");
             }
             else
             {
                 throw new Exception("Can not delete this category!");
             }
 
-            await this.dbContext.SaveChangesAsync();
         }
 
         public async Task<EditCategoryModel> GetEditCategoryModelAsync(string id)
@@ -216,7 +218,7 @@ namespace MyClothes.Services
 
             EditCategoryModel editCategoryViewModelTrimed = editCategoryInputModel;
 
-            editCategoryViewModelTrimed.Name.Trim(' ');
+            editCategoryViewModelTrimed.Name = editCategoryInputModel.Name.Trim(' ');
 
             Category updatedModel = this.mapper.Map(editCategoryViewModelTrimed, category);
 

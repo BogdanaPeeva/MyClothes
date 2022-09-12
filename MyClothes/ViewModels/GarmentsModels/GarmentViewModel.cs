@@ -11,11 +11,11 @@ namespace MyClothes.ViewModels.GarmentsModels
     {
         public string GarmentId { get; set; }
         public string ImageUrl { get; set; }
-        public string? CategoryName { get; set; }
-        public string? SeasonName { get; set; }
-        public string? ColourName { get; set; }
+        public string? CategoryName { get; set; } = "N/A";
+        public string? SeasonName { get; set; } = "N/A";
+        public string? ColourName { get; set; } = "N/A";
 
-        public string Description { get => $"Category: {this.CategoryName ?? "none"} <br> Season: {this.SeasonName ?? "none"} <br> Colour: {this.ColourName ?? "none"}"; }
+        public string Description { get => $"Category: {this.CategoryName  ?? "not aded"} <br> Season: {this.SeasonName ?? "not aded "} <br> Colour: {this.ColourName ?? "not aded"}"; }
 
 
 

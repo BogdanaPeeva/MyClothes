@@ -34,7 +34,7 @@ namespace MyClothes.Data.Configurations
             appUser
             .HasMany(au => au.Garments)
             .WithOne()
-            .HasForeignKey(ur => ur.AppUserId);//?
+            .HasForeignKey(ur => ur.AppUserId);
 
             appUser
             .HasMany(au => au.UserClothesCollection)

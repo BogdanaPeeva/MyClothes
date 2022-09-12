@@ -26,7 +26,7 @@ namespace MyClothes.Services
             this.dbContext = dbcontext;
             this.mapper = mapper;
         }
-        //TODO: Async?
+        
         public async Task<string> AddGarmentAsync(string userId, AppUser user, AddGarmentInputModel addGarmentInputModel, string path)
         {
             var garment = new Garment
@@ -122,7 +122,6 @@ namespace MyClothes.Services
             // todo:
             dbContext.AppUsers.FirstOrDefault(x => x.Id == userId).UserClothesCollection
                 .Add(garment);
-
 
             dbContext.AppUsers.FirstOrDefault(x => x.Id == userId).Garments.Add(userGarment);
 

@@ -4,9 +4,9 @@
 
 @if (this.TempData.ContainsKey("Message"))
 {
-<div class="alert alert-success">@this.TempData["Message"]</div>}
+<div class="alert alert-">@this.TempData["Message"]</div>}
 
-<div class="row">
+<div class="row" style="margin-top:20px;">
     @foreach (var category in Model.Categories)
     {
 <div class="col-md-4 media" style="display:flex">

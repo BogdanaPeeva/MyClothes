@@ -24,7 +24,6 @@
         public DbSet<Garment> Garments { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<UserGarment> UserGarments { get; set; }
-
         public DbSet<UserCategory> UsersCategories { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -40,11 +39,12 @@
             });
 
             //TODO Check
-            builder.Entity<IdentityUserRole<Guid>>().HasKey(p => new { p.UserId, p.RoleId });
+            //builder.Entity<IdentityUserRole<Guid>>().HasKey(p => new { p.UserId, p.RoleId });
 
             //TODO Check
 
             base.OnModelCreating(builder);
+
             this.ConfigureUserIdentityRelations(builder);
 
             builder.Seed();
