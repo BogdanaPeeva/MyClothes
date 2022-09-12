@@ -15,7 +15,7 @@ namespace MyClothes.Controllers
     using System.IO;
     using System.Linq;
     using MyClothes.ViewModels.GarmentsModels;
-    // todo:
+    // todo: push
     [AutoValidateAntiforgeryToken]
     public class ClothesController : Controller
     {
