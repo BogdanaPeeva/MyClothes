@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  myclothes:
+    image: ${DOCKER_REGISTRY-}myclothes
+    build:
+      context: .
+      dockerfile: MyClothes/Dockerfile

@@ -35,6 +35,8 @@ namespace MyClothes
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            // todo: check
+            services.AddDatabaseDeveloperPageExceptionFilter();
            
             services.AddDefaultIdentity<AppUser>(IdentityOptionsProvider.GetIdentityOptions)
                 /*.AddRoles<ApplicationRole>()*/.AddEntityFrameworkStores<ApplicationDbContext>();
@@ -73,6 +75,12 @@ namespace MyClothes
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             //AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
+
+            using var scope = app.ApplicationServices.CreateScope();
+
+            var db = scope.ServiceProvider.GetService<ApplicationDbContext>();
+
+            db.Database.Migrate();
 
             using (var serviceScope = app.ApplicationServices.CreateScope())
             {
@@ -116,7 +124,10 @@ namespace MyClothes
                         pattern: "{controller=Home}/{action=Index}/{id?}");
                     endpoints.MapRazorPages();
                 });
+
+               
             }
+           
         }
     }
 }
