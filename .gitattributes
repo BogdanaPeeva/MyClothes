@@ -61,3 +61,16 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+# This .gitattributes file is used to improve GitHub Linguist statistics.
+# It marks frontend/static files as vendored so that C# code is emphasized
+# in the language breakdown of the repository.
+
+# Ignore frontend static files in language stats
+*.css linguist-vendored
+*.scss linguist-vendored
+*.js linguist-vendored
+*.html linguist-vendored
+*.htm linguist-vendored
+wwwroot/** linguist-vendored
+
