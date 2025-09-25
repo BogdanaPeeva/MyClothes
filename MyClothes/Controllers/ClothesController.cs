@@ -52,6 +52,7 @@ namespace MyClothes.Controllers
         {
             return this.View();
         }
+        
         [Authorize]
         public async Task<IActionResult> Add()
         {
@@ -72,6 +73,7 @@ namespace MyClothes.Controllers
 
             return this.View(addGarmentInputModel);
         }
+        
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> Add(AddGarmentInputModel addGarmentInputModel)
@@ -128,6 +130,7 @@ namespace MyClothes.Controllers
                 return RedirectToAction(nameof(this.All));
             }
         }
+        
         [Authorize]
         public async Task<IActionResult> All()
         {
@@ -228,6 +231,7 @@ namespace MyClothes.Controllers
                 return RedirectToAction(nameof(this.All));
             }
         }
+        
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> Delete(string id)
@@ -236,6 +240,7 @@ namespace MyClothes.Controllers
 
             return this.View(garmentViewModel);
         }
+        
         [Authorize]
         [HttpPost]
         public async Task<IActionResult> DeletePost(string garmentId)
