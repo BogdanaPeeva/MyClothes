@@ -5,7 +5,7 @@ It demonstrates the use of **Entity Framework Core (Code First approach)**, migr
 
 ## Technologies
 - C#
-- .NET 6
+- .NET 5
 - ASP.NET MVC
 - Entity Framework Core (Code First, Migrations)
 - LINQ
