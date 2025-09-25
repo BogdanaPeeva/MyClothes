@@ -15,10 +15,10 @@ It demonstrates the use of **Code First approach**, migrations, and basic databa
 - Relational database integration
 - Basic business logic demonstration
 
+## Purpose
+To strengthen knowledge of **EF Core and LINQ** in .NET applications.
+
 ## Deployment
 This project includes a basic **Dockerfile** for educational purposes.  
 It demonstrates how to containerize an **ASP.NET MVC + EF Core** application in a simple way.  
 The goal was to practice containerization concepts, not to provide a production-ready Docker setup.
-
-## Purpose
-To strengthen knowledge of **EF Core and LINQ** in .NET applications.
