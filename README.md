@@ -1,11 +1,12 @@
 # MyClothes
 
-Learning project built to practice **C# and Entity Framework Core** by creating a CRUD application.  
-It demonstrates the use of **Code First approach**, migrations, and basic database operations.
+Educational project built to practice **C# and ASP.NET MVC** by creating a CRUD application.  
+It demonstrates the use of **Entity Framework Core (Code First approach)**, migrations, and database operations.
 
 ## Technologies
 - C#
 - .NET 6
+- ASP.NET MVC
 - Entity Framework Core (Code First, Migrations)
 - LINQ
 - SQL Server
@@ -13,10 +14,11 @@ It demonstrates the use of **Code First approach**, migrations, and basic databa
 ## Features
 - Create, Read, Update, and Delete (CRUD) operations
 - Relational database integration
-- Basic business logic demonstration
+- Basic business logic implementation
+- MVC structure with Controllers, Views, and Models
 
 ## Purpose
-To strengthen knowledge of **EF Core and LINQ** in .NET applications.
+Educational project created to practice **ASP.NET MVC, EF Core Code First, migrations and CRUD operations** in .NET
 
 ## Deployment
 This project includes a basic **Dockerfile** for educational purposes.  
