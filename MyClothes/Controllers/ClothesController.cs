@@ -20,8 +20,7 @@ namespace MyClothes.Controllers
     public class ClothesController : Controller
     {
         private readonly IClothesService garmentService;
-        private 
-            ICategoryService categoryService;
+        private readonly ICategoryService categoryService;
         private readonly ISeasonService seasonService;
         private readonly IColourService colourService;
         private readonly IWebHostEnvironment environment;
